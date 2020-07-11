@@ -20,7 +20,7 @@ export class CharacterComponent implements OnInit {
   constructor(private route: ActivatedRoute) {
     this.route.params.pipe(
       pluck('id'),
-      map((param: String) => Number(param))
+      map((param: string) => Number(param))
     )
       .subscribe(id => {
         this.character = this.characters.find(char => char.id === id);
