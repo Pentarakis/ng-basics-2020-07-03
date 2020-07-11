@@ -4,6 +4,7 @@ import { CharacterComponent } from './character/character.component';
 import { CharacterListComponent } from './character-list/character-list.component';
 import { RouterModule } from "@angular/router";
 import {CharacterRoutingModule} from "./character-routing.module";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -13,7 +14,8 @@ import {CharacterRoutingModule} from "./character-routing.module";
   imports: [
     CommonModule,
     RouterModule,
-    CharacterRoutingModule
+    CharacterRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class CharacterModule { }

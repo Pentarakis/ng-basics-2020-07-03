@@ -1,4 +1,24 @@
+<form [formGroup]="form">
+  <label>
+    ID:
+    <input name="id" formControlName="id">
+  </label>
 
-<div *ngIf="character">
-  Selected Book: {{ character?.name }}
-</div>
+  <br>
+
+  <label>
+    Name:
+    <input name="name" formControlName="name">
+  </label>
+
+  <br>
+
+  <label>
+    Culture:
+    <input name="culture" formControlName="culture">
+  </label>
+
+  <br>
+
+  <button (click)="save()">Save</button>
+</form>

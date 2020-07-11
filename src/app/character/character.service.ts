@@ -19,4 +19,8 @@ export class CharacterService {
   getById(id: number): Observable<Character> {
     return this.httpClient.get<Character>(`${this.baseUrl}/${id}`);
   }
+
+  update(character: Character): Observable<Character> {
+    return this.httpClient.put<Character>(`${this.baseUrl}/${character.id}`, character);
+  }
 }
