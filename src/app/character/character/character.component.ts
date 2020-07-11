@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Character} from "../model/character";
 import {ActivatedRoute} from "@angular/router";
-import {map, pluck} from "rxjs/operators";
+import {map, pluck, switchMap} from "rxjs/operators";
+import {CharacterService} from "../character.service";
 
 @Component({
   selector: 'ngb-character',
@@ -17,14 +18,13 @@ export class CharacterComponent implements OnInit {
 
   character: Character;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute, private characterService: CharacterService) {
     this.route.params.pipe(
       pluck('id'),
-      map((param: string) => Number(param))
+      map((param: string) => Number(param)),
+      switchMap((id: number) => this.characterService.getById(id))
     )
-      .subscribe(id => {
-        this.character = this.characters.find(char => char.id === id);
-      });
+      .subscribe((character: Character) => this.character = character);
   }
 
   ngOnInit(): void {

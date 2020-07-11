@@ -8,7 +8,7 @@
   </thead>
 
   <tbody>
-  <tr *ngFor="let character of characters" [routerLink]="character.id">
+  <tr *ngFor="let character of characters$ | async" [routerLink]="character.id">
     <td>{{ character.id}}</td>
     <td>{{ character.name}}</td>
     <td>{{ character.culture}}</td>
