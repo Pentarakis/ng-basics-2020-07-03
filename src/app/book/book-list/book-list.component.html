@@ -1,0 +1,22 @@
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>ISBN</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let book of books" (click)="selectedBook = book">
+    <td>{{ book.id}}</td>
+    <td>{{ book.name}}</td>
+    <td>{{ book.isbn}}</td>
+  </tr>
+  </tbody>
+
+</table>
+
+<ngb-book [selectedBook]="selectedBook"></ngb-book>
+
+

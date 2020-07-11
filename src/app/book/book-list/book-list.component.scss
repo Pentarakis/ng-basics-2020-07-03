@@ -1,0 +1,14 @@
+table {
+  border-collapse: collapse;
+  width: 50%;
+
+  th, td {
+    border: 1px solid black;
+  }
+
+  tbody tr:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+  }
+}

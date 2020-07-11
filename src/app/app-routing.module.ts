@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {DashboardComponent} from "./basic-layout/dashboard/dashboard.component";
-import {BookComponent} from "./book/book/book.component";
+import {BookListComponent} from "./book/book-list/book-list.component";
 
 
 const routes: Routes = [
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'book',
-    component: BookComponent
+    component: BookListComponent
   }
 ];
 
